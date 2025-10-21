@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金石凌躍 - 创造无限可能</title>
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #ff3366;
+            --secondary-color: #33ccff;
+            --accent-color: #ffcc00;
+            --dark-bg: #0a0a1a;
+            --darker-bg: #050510;
+            --light-text: #ffffff;
+            --gray-text: #b0b0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            overflow-x: hidden;
+        }
+
+        /* 导航栏样式 */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(10, 10, 26, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+            nav a:hover {
+                color: var(--secondary-color);
+            }
+
+            nav a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--secondary-color);
+                transition: width 0.3s;
+            }
+
+            nav a:hover::after {
+                width: 100%;
+            }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--light-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+            .language-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--darker-bg);
+            border-radius: 10px;
+            padding: 10px 0;
+            width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .language-selector:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            .language-option:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        /* 主横幅区域 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(51, 204, 255, 0.3);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--gray-text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+        }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(255, 51, 102, 0.4);
+            }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(51, 204, 255, 0.1);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+            }
+        }
+
+        /* 游戏展示区 */
+        .games-section {
+            padding: 100px 5%;
+            background-color: var(--darker-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+            .game-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            }
+
+        .game-image {
+            height: 200px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+
+        .game-description {
+            color: var(--gray-text);
+            margin-bottom: 15px;
+        }
+
+        /* IP角色展示区 */
+        .characters-section {
+            padding: 100px 5%;
+        }
+
+        .character-slider {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .character-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background-size: cover;
+            background-position: center;
+        }
+
+            .character-slide.active {
+                opacity: 1;
+            }
+
+        .character-info {
+            max-width: 500px;
+            background: rgba(10, 10, 26, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .character-name {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+
+        .character-description {
+            color: var(--gray-text);
+            margin-bottom: 20px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+            .slider-dot.active {
+                background: var(--secondary-color);
+            }
+
+        /* 媒体内容区 */
+        .media-section {
+            padding: 100px 5%;
+            background-color: var(--darker-bg);
+        }
+
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .media-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .media-item:hover {
+                transform: scale(1.03);
+            }
+
+        .media-placeholder {
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+        }
+
+        .media-caption {
+            padding: 15px;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        /* 关于我们内容区 */
+        .about-section {
+            padding: 100px 5%;
+            background-color: var(--darker-bg);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .about-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .about-item:hover {
+                transform: scale(1.03);
+            }
+
+        .about-placeholder {
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+        }
+
+        .about-caption {
+            padding: 15px;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        /* 联系我们内容区 */
+        .contact-section {
+            padding: 100px 5%;
+            background-color: var(--darker-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .contact-item:hover {
+                transform: scale(1.03);
+            }
+
+        .contact-placeholder {
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+        }
+
+        .contact-caption {
+            padding: 15px;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--darker-bg);
+            padding: 50px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--light-text);
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: var(--gray-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            .footer-column a:hover {
+                color: var(--secondary-color);
+            }
+
+        .copyright {
+            color: var(--gray-text);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+
+            nav {
+                margin: 15px 0;
+            }
+
+                nav ul {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .character-slide {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .character-info {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="logo">MOA 金石凌躍</div>
+        <nav>
+            <ul>
+                <li><a href="#" data-lang-key="nav-home">首页</a></li>
+                <li><a href="#games" data-lang-key="nav-games">游戏</a></li>
+                <li><a href="#char" data-lang-key="nav-characters">角色</a></li>
+                <li><a href="#media" data-lang-key="nav-media">媒体</a></li>
+                <li><a href="#about" data-lang-key="nav-about">关于我们</a></li>
+                <li><a href="#contact" data-lang-key="nav-contact">联系我们</a></li>
+            </ul>
+        </nav>
+        <div class="language-selector">
+            <button class="language-btn">
+                <span data-lang-key="current-lang">中文</span> ▼
+            </button>
+            <div class="language-dropdown">
+                <div class="language-option" data-lang="zh-CN">中文</div>
+                <div class="language-option" data-lang="en-US">English</div>
+                <div class="language-option" data-lang="ja-JP">日本語</div>
+                <div class="language-option" data-lang="ko-KR">한국어</div>
+                <div class="language-option" data-lang="fr-FR">Français</div>
+                <div class="language-option" data-lang="ru-RU">Русский</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主横幅区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-lang-key="hero-title">创造无限可能</h1>
+            <p data-lang-key="hero-subtitle">我们致力于打造沉浸式的游戏体验与令人难忘的角色故事</p>
+            <a href="#" class="cta-button" data-lang-key="hero-cta">探索我们的世界</a>
+        </div>
+        <div class="hero-bg">
+            <!-- 这里可以添加动态背景或视频 -->
+            <!-- 示例：<video autoplay muted loop><source src="background-video.mp4" type="video/mp4"></video> -->
+        </div>
+        <!-- 浮动元素 -->
+        <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%;"></div>
+        <div class="floating-element" style="width: 80px; height: 80px; top: 80%; left: 20%;"></div>
+    </section>
+
+    <!-- 游戏展示区 -->
+    <section class="games-section" id="games">
+        <h2 class="section-title" data-lang-key="games-title">我们的游戏</h2>
+        <div class="games-grid">
+            <!-- 游戏卡片1 -->
+            <div class="game-card">
+                <div class="game-image" style="background-color: #1a1a2e;">
+                    <!-- 这里可以添加游戏图片 -->
+                    <!-- 示例：<img src="game1.jpg" alt="游戏1"> -->
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
+                        游戏1图片位置
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title" data-lang-key="game1-title">星际冒险者</h3>
+                    <p class="game-description" data-lang-key="game1-desc">一款开放世界太空探索游戏，玩家可以在浩瀚宇宙中建立自己的星际帝国。</p>
+                    <a href="#" class="cta-button" data-lang-key="game1-cta">了解更多</a>
+                </div>
+            </div>
+
+            <!-- 游戏卡片2 -->
+            <div class="game-card">
+                <div class="game-image" style="background-color: #2e1a2e;">
+                    <!-- 这里可以添加游戏图片 -->
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
+                        游戏2图片位置
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title" data-lang-key="game2-title">魔法学院</h3>
+                    <p class="game-description" data-lang-key="game2-desc">沉浸式魔法世界角色扮演游戏，学习咒语、制作魔药并与神秘生物互动。</p>
+                    <a href="#" class="cta-button" data-lang-key="game2-cta">了解更多</a>
+                </div>
+            </div>
+
+            <!-- 游戏卡片3 -->
+            <div class="game-card">
+                <div class="game-image" style="background-color: #1a2e2a;">
+                    <!-- 这里可以添加游戏图片 -->
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
+                        游戏3图片位置
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title" data-lang-key="game3-title">未来竞技场</h3>
+                    <p class="game-description" data-lang-key="game3-desc">快节奏竞技射击游戏，在高科技竞技场中使用未来武器与独特能力对战。</p>
+                    <a href="#" class="cta-button" data-lang-key="game3-cta">了解更多</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IP角色展示区 -->
+    <section class="characters-section" id="char">
+        <h2 class="section-title" data-lang-key="characters-title">人气角色</h2>
+        <div class="character-slider">
+            <!-- 角色幻灯片1 -->
+            <div class="character-slide active" style="background-color: #2a1a2e;">
+                <div class="character-info">
+                    <h3 class="character-name" data-lang-key="character1-name">星夜</h3>
+                    <p class="character-description" data-lang-key="character1-desc">来自遥远星系的旅行者，掌握着操控星辰的神秘力量。她正在寻找失散的家人，同时保护着宇宙的平衡。</p>
+                    <a href="#" class="cta-button" data-lang-key="character1-cta">查看详情</a>
+                </div>
+            </div>
+
+            <!-- 角色幻灯片2 -->
+            <div class="character-slide" style="background-color: #1a2e2a;">
+                <div class="character-info">
+                    <h3 class="character-name" data-lang-key="character2-name">炎刃</h3>
+                    <p class="character-description" data-lang-key="character2-desc">曾经是皇家卫队的精英战士，现在为了正义而战。他的剑术无人能及，火焰之力可以熔化最坚硬的金属。</p>
+                    <a href="#" class="cta-button" data-lang-key="character2-cta">查看详情</a>
+                </div>
+            </div>
+
+            <!-- 角色幻灯片3 -->
+            <div class="character-slide" style="background-color: #2e2a1a;">
+                <div class="character-info">
+                    <h3 class="character-name" data-lang-key="character3-name">灵风</h3>
+                    <p class="character-description" data-lang-key="character3-desc">森林的守护者，能与自然元素沟通。她敏捷如风，神秘莫测，总是在关键时刻出现拯救需要帮助的人。</p>
+                    <a href="#" class="cta-button" data-lang-key="character3-cta">查看详情</a>
+                </div>
+            </div>
+
+            <div class="slider-nav">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 媒体内容区 -->
+    <section class="media-section" id="media">
+        <h2 class="section-title" data-lang-key="media-title">媒体内容</h2>
+        <div class="media-container">
+            <!-- 媒体项1 - 视频 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <!-- 这里可以添加视频 -->
+                    <!-- 示例：<video controls><source src="trailer.mp4" type="video/mp4"></video> -->
+                    视频内容位置
+                </div>
+                <div class="media-caption" data-lang-key="media1-caption">最新游戏预告片</div>
+            </div>
+
+            <!-- 媒体项2 - 图片 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <!-- 这里可以添加图片 -->
+                    <!-- 示例：<img src="artwork1.jpg" alt="艺术作品"> -->
+                    概念艺术位置
+                </div>
+                <div class="media-caption" data-lang-key="media2-caption">角色概念艺术</div>
+            </div>
+
+            <!-- 媒体项3 - 视频 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <!-- 这里可以添加视频 -->
+                    <!-- 示例：<video controls><source src="behind-scenes.mp4" type="video/mp4"></video> -->
+                    幕后花絮位置
+                </div>
+                <div class="media-caption" data-lang-key="media3-caption">开发幕后花絮</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about-section" id="about">
+        <h2 class="section-title" data-lang-key="about-title">关于我们</h2>
+        <p class="about-block">专注于游戏场景应用</p>
+        <div class="about-container">
+                
+                
+            <div class="about-block">
+                <h3><class="about-placeholder"></i> 公司介绍</h3>
+                <div class="about-item">
+                    <p>在这里添加公司介绍文字。金石凌躍 MOVEMENT OF ARTICULATION 致力于为全球客户提供创新的游戏场景应用方案，帮助客户应对数字化转型挑战。</p>
+                </div>
+            </div>
+            <div class="about-block">
+                <h3><i class="fas fa-image"></i> 团队照片（可替换区域）</h3>
+                <div class="editable media">
+                    <i class="fas fa-image fa-3x"></i>
+                    <p>在此处添加团队照片或图片</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact-section" id="contact">
+        
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>联系我们</h2>
+                <p>让我们开启您的虚拟无尽之旅</p>
+            </div>
+            <div class="contact-block">
+                <h3><i class="fas fa-map-marker-alt"></i> 联系方式</h3>
+                <div class="contact-item">
+                    <p>  地址：中国香港上环苏杭街99号嘉发商业中心11楼A</p>
+                    <p>  电话：+852 5223 0024 / +86 13049485637</p>
+                    <p>  邮箱：moa@biznetvigator.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3 data-lang-key="footer-company">公司</h3>
+                <ul>
+                    <li><a href="#" data-lang-key="footer-about">关于我们</a></li>
+                    <li><a href="#" data-lang-key="footer-careers">招聘信息</a></li>
+                    <li><a href="#" data-lang-key="footer-news">新闻中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-lang-key="footer-games">游戏</h3>
+                <ul>
+                    <li><a href="#" data-lang-key="game1-title">星际冒险者</a></li>
+                    <li><a href="#" data-lang-key="game2-title">魔法学院</a></li>
+                    <li><a href="#" data-lang-key="game3-title">未来竞技场</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-lang-key="footer-support">支持</h3>
+                <ul>
+                    <li><a href="#" data-lang-key="footer-help">帮助中心</a></li>
+                    <li><a href="#" data-lang-key="footer-contact">联系我们</a></li>
+                    <li><a href="#" data-lang-key="footer-faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-lang-key="footer-connect">关注我们</h3>
+                <ul>
+                    <li><a href="#" data-lang-key="footer-twitter">Twitter</a></li>
+                    <li><a href="#" data-lang-key="footer-facebook">Facebook</a></li>
+                    <li><a href="#" data-lang-key="footer-instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p data-lang-key="footer-copyright">© 2025 金石凌躍有限公司 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 多语言支持
+        const translations = {
+            'zh-CN': {
+                'nav-home': '首页',
+                'nav-games': '游戏',
+                'nav-characters': '角色',
+                'nav-media': '媒体',
+                'nav-about': '关于我们',
+                'nav-contact': '联系我们',
+                'current-lang': '中文',
+                'hero-title': '创造无限可能',
+                'hero-subtitle': '我们致力于打造沉浸式的游戏体验与令人难忘的角色故事',
+                'hero-cta': '探索我们的世界',
+                'games-title': '我们的游戏',
+                'game1-title': '星际冒险者',
+                'game1-desc': '一款开放世界太空探索游戏，玩家可以在浩瀚宇宙中建立自己的星际帝国。',
+                'game1-cta': '了解更多',
+                'game2-title': '魔法学院',
+                'game2-desc': '沉浸式魔法世界角色扮演游戏，学习咒语、制作魔药并与神秘生物互动。',
+                'game2-cta': '了解更多',
+                'game3-title': '未来竞技场',
+                'game3-desc': '快节奏竞技射击游戏，在高科技竞技场中使用未来武器与独特能力对战。',
+                'game3-cta': '了解更多',
+                'characters-title': '人气角色',
+                'character1-name': '星夜',
+                'character1-desc': '来自遥远星系的旅行者，掌握着操控星辰的神秘力量。她正在寻找失散的家人，同时保护着宇宙的平衡。',
+                'character1-cta': '查看详情',
+                'character2-name': '炎刃',
+                'character2-desc': '曾经是皇家卫队的精英战士，现在为了正义而战。他的剑术无人能及，火焰之力可以熔化最坚硬的金属。',
+                'character2-cta': '查看详情',
+                'character3-name': '灵风',
+                'character3-desc': '森林的守护者，能与自然元素沟通。她敏捷如风，神秘莫测，总是在关键时刻出现拯救需要帮助的人。',
+                'character3-cta': '查看详情',
+                'media-title': '媒体内容',
+                'media1-caption': '最新游戏预告片',
+                'media2-caption': '角色概念艺术',
+                'media3-caption': '开发幕后花絮',
+                'about-title': '关于我们',
+                
+                'footer-company': '公司',
+                'footer-about': '关于我们',
+                'footer-careers': '招聘信息',
+                'footer-news': '新闻中心',
+                'footer-games': '游戏',
+                'footer-support': '支持',
+                'footer-help': '帮助中心',
+                'footer-contact': '联系我们',
+                'footer-faq': '常见问题',
+                'footer-connect': '关注我们',
+                'footer-twitter': 'Twitter',
+                'footer-facebook': 'Facebook',
+                'footer-instagram': 'Instagram',
+                'footer-copyright': '© 2025 金石凌躍 版权所有'
+            },
+            'en-US': {
+                'nav-home': 'Home',
+                'nav-games': 'Games',
+                'nav-characters': 'Characters',
+                'nav-media': 'Media',
+                'nav-about': 'About Us',
+                'nav-contact': 'Contact',
+                'current-lang': 'English',
+                'hero-title': 'Creating Infinite Possibilities',
+                'hero-subtitle': 'We are dedicated to creating immersive gaming experiences and unforgettable character stories',
+                'hero-cta': 'Explore Our Worlds',
+                'games-title': 'Our Games',
+                'game1-title': 'Stellar Adventurer',
+                'game1-desc': 'An open-world space exploration game where players can build their own interstellar empire in the vast universe.',
+                'game1-cta': 'Learn More',
+                'game2-title': 'Magic Academy',
+                'game2-desc': 'An immersive magical world RPG where you learn spells, brew potions, and interact with mystical creatures.',
+                'game2-cta': 'Learn More',
+                'game3-title': 'Future Arena',
+                'game3-desc': 'A fast-paced competitive shooter where you battle in high-tech arenas using futuristic weapons and unique abilities.',
+                'game3-cta': 'Learn More',
+                'characters-title': 'Popular Characters',
+                'character1-name': 'Starlight',
+                'character1-desc': 'A traveler from a distant galaxy, mastering the mysterious power to control stars. She is searching for her lost family while protecting the balance of the universe.',
+                'character1-cta': 'View Details',
+                'character2-name': 'Blaze Blade',
+                'character2-desc': 'Once an elite warrior of the Royal Guard, now fighting for justice. His swordsmanship is unparalleled, and his flame power can melt the hardest metals.',
+                'character2-cta': 'View Details',
+                'character3-name': 'Spirit Wind',
+                'character3-desc': 'Guardian of the forest, able to communicate with natural elements. She is as agile as the wind, mysterious and unpredictable, always appearing at critical moments to save those in need.',
+                'character3-cta': 'View Details',
+                'media-title': 'Media Content',
+                'media1-caption': 'Latest Game Trailer',
+                'media2-caption': 'Character Concept Art',
+                'media3-caption': 'Behind the Scenes',
+                'about-title': 'About',
+                
+                'footer-company': 'Company',
+                'footer-about': 'About Us',
+                'footer-careers': 'Careers',
+                'footer-news': 'News',
+                'footer-games': 'Games',
+                'footer-support': 'Support',
+                'footer-help': 'Help Center',
+                'footer-contact': 'Contact Us',
+                'footer-faq': 'FAQ',
+                'footer-connect': 'Follow Us',
+                'footer-twitter': 'Twitter',
+                'footer-facebook': 'Facebook',
+                'footer-instagram': 'Instagram',
+                'footer-copyright': '© 2025 MOVEMENT OF ARTICULATION LIMITED All Rights Reserved'
+            }
+            // 其他语言可以在这里添加
+        };
+
+        // 当前语言
+        let currentLang = 'zh-CN';
+
+        // 语言切换功能
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (translations[lang]) {
+                    currentLang = lang;
+                    updateLanguage();
+
+                    // 更新当前语言显示
+                    document.querySelector('.language-btn span').textContent =
+                        translations[lang]['current-lang'];
+                }
+            });
+        });
+
+        // 更新页面语言
+        function updateLanguage() {
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+        }
+
+        // 角色轮播功能
+        const slides = document.querySelectorAll('.character-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            currentSlide = (n + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        // 点击圆点切换幻灯片
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // 自动轮播
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+
+        // 页面滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 5%';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.padding = '20px 5%';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
