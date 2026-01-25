@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金石凌躍 - 创造无限可能</title>
+    <title>金石凌躍 - Chem001</title>
     <link rel="icon" type="image/x-icon" href="Images/moa.png">
     <!--<script src="https://cdn.tailwindcss.com"></script>-->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -151,7 +151,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(18,18,18,0.9), rgba(18,18,18,0.5)), url('Images/OverallCover.jpg') center/cover;
+            background: linear-gradient(rgba(18,18,18,0.9), rgba(18,18,18,0.5)), url('Images/Cover_Chem001.jpg') center/cover;
             /* background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%), url('Images/2024042301i.jpg') center/cover;*/
         }
 
@@ -572,12 +572,12 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" data-lang-key="nav-home">首页</a></li>
-                <li><a href="#games" data-lang-key="nav-games">游戏</a></li>
-                <li><a href="#char" data-lang-key="nav-characters">角色</a></li>
-                <li><a href="#media" data-lang-key="nav-media">媒体</a></li>
-                <li><a href="#about" data-lang-key="nav-about">关于我们</a></li>
-                <li><a href="#contact" data-lang-key="nav-contact">联系我们</a></li>
+                <li><a href="index.html" data-lang-key="nav-home">首页</a></li>
+                <li><a href="index.html#games" data-lang-key="nav-games">游戏</a></li>
+                <li><a href="index.html#char" data-lang-key="nav-characters">角色</a></li>
+                <li><a href="index.html#media" data-lang-key="nav-media">媒体</a></li>
+                <li><a href="index.html#about" data-lang-key="nav-about">关于我们</a></li>
+                <li><a href="index.html#contact" data-lang-key="nav-contact">联系我们</a></li>
             </ul>
         </nav>
         <div class="language-selector">
@@ -598,7 +598,7 @@
     <!-- 主横幅区域 -->
     <section class="hero">
         <div class="hero-content">
-            <h1 data-lang-key="hero-title">创造无限可能</h1>
+            <h1 data-lang-key="hero-title">Chem001</h1>
             <p data-lang-key="hero-subtitle">我们致力于打造沉浸式的游戏体验与令人难忘的角色故事</p>
             <a href="#" class="cta-button" data-lang-key="hero-cta">探索我们的世界</a>
         </div>
@@ -614,245 +614,31 @@
 
     <!-- 游戏展示区 -->
     <section class="games-section" id="games">
-        <h2 class="section-title" data-lang-key="games-title">我们的游戏</h2>
+        <!--<h2 class="section-title" data-lang-key="games-title">我们的游戏</h2>-->
         <div class="games-grid">
             <!-- 游戏卡片1 -->
-            <div class="game-card" id="game1">
+ 
+            <div class="game-card">
+                <img src="Images/MOAexpoWeb1.jpg" alt="Chem001" width="600" height="450">
                 <div class="game-image" style="background-color: #1a1a2e;">
                     <!-- 这里可以添加游戏图片 -->
                     <!-- 示例：<img src="game1.jpg" alt="游戏1"> -->
 
-                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 200%; color: var(--gray-text);">
                         <!--游戏1图片位置-->
-                        <img src="Images/Cover_Chem001.jpg" alt="Chem001" width="350" height="196.875">
+
                     </div>
                 </div>
                 <div class="game-content">
-                    <h3 class="game-title" data-lang-key="game1-title">Chem001</h3>
-                    <p class="game-description" data-lang-key="game1-desc">一款2D RPG冒险游戏，玩家可以在这个游戏故事中探索化学的奥秘。</p>
-                    <a href="game1.html" class="cta-button" data-lang-key="game1-cta">了解更多</a>
-                </div>
-            </div>
-
-            <!-- 游戏卡片2 -->
-            <div class="game-card" id="game2">
-                <div class="game-image" style="background-color: #2e1a2e;">
-                    <!-- 这里可以添加游戏图片 -->
-                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
-                        <!--游戏2图片位置-->
-                        <img src="Images/Cover_Econ001.jpg" alt="Econ001" width="350" height="196.875">
-                    </div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title" data-lang-key="game2-title">Econ001</h3>
-                    <p class="game-description" data-lang-key="game2-desc">策略类经营游戏，玩家通过发展自己领地的经济，积累资源，扩张势力。</p>
-                    <a href="#" class="cta-button" data-lang-key="game2-cta">了解更多</a>
-                </div>
-            </div>
-
-            <!-- 游戏卡片3 -->
-            <div class="game-card" id="game3">
-                <div class="game-image" style="background-color: #1a2e2a;">
-                    <!-- 这里可以添加游戏图片 -->
-                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
-                        <!--游戏3图片位置-->
-                        <img src="Images/Cover_Hist001.jpg" alt="Hist001" width="350" height="196.875">
-                    </div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title" data-lang-key="game3-title">Hist001</h3>
-                    <p class="game-description" data-lang-key="game3-desc">快节奏战斗游戏，在充满历史元素的环境中与敌人对战通关。</p>
-                    <a href="#" class="cta-button" data-lang-key="game3-cta">了解更多</a>
-                </div>
-            </div>
-
-            <!-- 游戏卡片4 -->
-            <div class="game-card" id="game4">
-                <div class="game-image" style="background-color: #2a1e2a;">
-                    <!-- 这里可以添加游戏图片 -->
-                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
-                        <!--游戏4图片位置-->
-                        <img src="Images/MOA_game_covers1.jpg" alt="Stat001" width="350" height="196.875">
-                    </div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title" data-lang-key="game4-title">Stat001</h3>
-                    <p class="game-description" data-lang-key="game4-desc">数据模拟游戏，尝试当企业的管理层。</p>
-                    <a href="#" class="cta-button" data-lang-key="game4-cta">了解更多</a>
+                    <!--<h3 class="game-title" data-lang-key="game1-title">Chem001</h3>-->
+                    <!--<p class="game-description" data-lang-key="game1-desc">一款2D RPG冒险游戏，玩家可以在这个游戏故事中探索化学的奥秘。</p>-->
+                    <!--<a href="#" class="cta-button" data-lang-key="game1-cta">了解更多</a>-->
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- IP角色展示区 -->
-    <section class="characters-section" id="char">
-        <h2 class="section-title" data-lang-key="characters-title">人气角色</h2>
-        <div class="character-slider">
-            <!-- 角色幻灯片1 -->
-            <div class="character-slide active" style="background-color: #2a1a2e; background-image: url('Images/Music003.jpg');">
-                <div class="character-info">
-                    <h3 class="character-name" data-lang-key="character1-name">003</h3>
-                    <p class="character-description" data-lang-key="character1-desc">来自遥远星系的旅行者，掌握着操控星辰的神秘力量。她正在寻找失散的家人，同时保护着宇宙的平衡。</p>
-                    <a href="#" class="cta-button" data-lang-key="character1-cta">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 角色幻灯片2 -->
-            <div class="character-slide" style="background-color: #1a2e2a; background-image: url('Images/Music004.jpg');">
-                <div class="character-info">
-                    <h3 class="character-name" data-lang-key="character2-name">004</h3>
-                    <p class="character-description" data-lang-key="character2-desc">森林的守护者，能与自然元素沟通。她敏捷如风，神秘莫测，总是在关键时刻出现拯救需要帮助的人。</p>
-                    <a href="#" class="cta-button" data-lang-key="character2-cta">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 角色幻灯片3 -->
-            <div class="character-slide" style="background-color: #2e2a1a; background-image: url('Images/Music015.jpg');">
-                <div class="character-info">
-                    <h3 class="character-name" data-lang-key="character3-name">015</h3>
-                    <p class="character-description" data-lang-key="character3-desc">曾经是皇家卫队的精英战士，现在为了正义而战。剑术无人能及，火焰之力可以熔化最坚硬的金属。</p>
-                    <a href="#" class="cta-button" data-lang-key="character3-cta">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 角色幻灯片4 -->
-            <div class="character-slide" style="background-color: #2e1a1a; background-image: url('Images/Music017.jpg');">
-                <div class="character-info">
-                    <h3 class="character-name" data-lang-key="character4-name">017</h3>
-                    <p class="character-description" data-lang-key="character4-desc">非常注重整齐与环境清洁，有着不一般的洁癖。</p>
-                    <a href="#" class="cta-button" data-lang-key="character4-cta">查看详情</a>
-                </div>
-            </div>
-
-            <div class="slider-nav">
-                <div class="slider-dot active" data-slide="0"></div>
-                <div class="slider-dot" data-slide="1"></div>
-                <div class="slider-dot" data-slide="2"></div>
-                <div class="slider-dot" data-slide="3"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 媒体内容区 -->
-    <section class="media-section" id="media">
-        <h2 class="section-title" data-lang-key="media-title">媒体内容</h2>
-        <div class="media-container">
-            <!-- 媒体项1 - 视频 -->
-            <div class="media-item">
-                <div class="media-placeholder">
-                    <!-- 这里可以添加视频 -->
-                    <!-- 示例：<video controls><source src="trailer.mp4" type="video/mp4"></video> -->
-                    视频内容位置
-                </div>
-                <div class="media-caption" data-lang-key="media1-caption">最新游戏预告片</div>
-            </div>
-
-            <!-- 媒体项2 - 图片 -->
-            <div class="media-item">
-                <div class="media-placeholder">
-                    <!-- 这里可以添加图片 -->
-                    <!-- 示例：<img src="artwork1.jpg" alt="艺术作品"> -->
-                    概念艺术位置
-                </div>
-                <div class="media-caption" data-lang-key="media2-caption">角色概念艺术</div>
-            </div>
-
-            <!-- 媒体项3 - 视频 -->
-            <div class="media-item">
-                <div class="media-placeholder">
-                    <!-- 这里可以添加视频 -->
-                    <!-- 示例：<video controls><source src="behind-scenes.mp4" type="video/mp4"></video> -->
-                    幕后花絮位置
-                </div>
-                <div class="media-caption" data-lang-key="media3-caption">开发幕后花絮</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于我们 -->
-    <section class="about-section" id="about">
-        <h2 class="section-title" data-lang-key="about-title">关于我们</h2>
-        <!--<p class="about-block">专注于游戏场景应用</p>-->
-        <div class="about-container">
-
-
-            <div class="about-block">
-                <h3><class ="about-placeholder"></i> 公司介绍</h3>
-                <div class="about-item">
-                    <p data-lang-key="about-content">金石凌躍 MOVEMENT OF ARTICULATION 致力于为客户提供创新的游戏场景应用方案，帮助客户应对数字化转型挑战。</p>
-                </div>
-            </div>
-            <div class="about-block">
-                <h3><i class="fas fa-image"></i> 团队照片</h3>
-                <div class="editable media">
-                    <i class="fas fa-image fa-3x"></i>
-                    <!--<p>在此处添加团队照片或图片</p>-->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
-    <section class="contact-section" id="contact">
-        
-        <div class="contact-container">
-            <div class="section-title">
-                <h2 data-lang-key="contact-title">联系我们</h2>
-                <p data-lang-key="contact-content">让我们开启您的虚拟无尽之旅</p>
-            </div>
-            <div class="contact-block">
-                <h3><i class="fas fa-map-marker-alt" data-lang-key="contact-channel">联系方式</i></h3>
-                <div class="contact-item">
-                    <!--<p>  电话：+852 5223 0024 / +86 13049485637</p>-->
-                    <p data-lang-key="contact-mail">  邮箱：moa@biznetvigator.com</p>
-                    <p data-lang-key="contact-area">  地区：中国。香港</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3 data-lang-key="footer-company">公司</h3>
-                <ul>
-                    <li><a href="#" data-lang-key="footer-about">关于我们</a></li>
-                    <li><a href="#" data-lang-key="footer-careers">招聘信息</a></li>
-                    <li><a href="#" data-lang-key="footer-news">新闻中心</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 data-lang-key="footer-games">游戏</h3>
-                <ul>
-                    <li><a href="#game1" data-lang-key="game1-title">Chem001</a></li>
-                    <li><a href="#game2" data-lang-key="game2-title">Econ001</a></li>
-                    <li><a href="#game3" data-lang-key="game3-title">Hist001</a></li>
-                    <li><a href="#game4" data-lang-key="game4-title">Stat001</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 data-lang-key="footer-support">支持</h3>
-                <ul>
-                    <li><a href="#" data-lang-key="footer-help">帮助中心</a></li>
-                    <li><a href="#" data-lang-key="footer-contact">联系我们</a></li>
-                    <li><a href="#" data-lang-key="footer-faq">常见问题</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 data-lang-key="footer-connect">关注我们</h3>
-                <ul>
-                    <li><a href="#" data-lang-key="footer-twitter">Twitter</a></li>
-                    <li><a href="#" data-lang-key="footer-facebook">Facebook</a></li>
-                    <li><a href="#" data-lang-key="footer-instagram">Instagram</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p data-lang-key="footer-copyright">© 2026 金石凌躍有限公司 版权所有</p>
-        </div>
-    </footer>
 
     <script>
         // 多语言支持
@@ -865,21 +651,21 @@
                 'nav-about': '关于我们',
                 'nav-contact': '联系我们',
                 'current-lang': '中文',
-                'hero-title': '创造无限可能',
+                'hero-title': 'Chem001',
                 'hero-subtitle': '我们致力于打造沉浸式的游戏体验与令人难忘的角色故事',
                 'hero-cta': '探索我们的世界',
                 'games-title': '我们的游戏',
                 'game1-title': 'Chem001',
-                'game1-desc': '一款2D RPG冒险游戏，玩家可以在这个游戏故事中探索化学的奥秘。',
+                'game1-desc': '一款开放世界太空探索游戏，玩家可以在浩瀚宇宙中建立自己的星际帝国。',
                 'game1-cta': '了解更多',
                 'game2-title': 'Econ001',
-                'game2-desc': '策略类经营游戏，玩家通过发展自己领地的经济，积累资源，扩张势力。',
+                'game2-desc': '沉浸式魔法世界角色扮演游戏，学习咒语、制作魔药并与神秘生物互动。',
                 'game2-cta': '了解更多',
                 'game3-title': 'Hist001',
-                'game3-desc': '快节奏战斗游戏，在充满历史元素的环境中与敌人对战通关。',
+                'game3-desc': '快节奏竞技射击游戏，在高科技竞技场中使用未来武器与独特能力对战。',
                 'game3-cta': '了解更多',
                 'game4-title': 'Stat001',
-                'game4-desc': '数据模拟游戏，尝试当企业的管理层。',
+                'game4-desc': '快节奏竞技射击游戏，在高科技竞技场中使用未来武器与独特能力对战。',
                 'game4-cta': '了解更多',
                 'characters-title': '人气角色',
                 'character1-name': '003',
@@ -928,21 +714,21 @@
                 'nav-about': 'About Us',
                 'nav-contact': 'Contact',
                 'current-lang': 'English',
-                'hero-title': 'Creating Infinite Possibilities',
+                'hero-title': 'Chem001',
                 'hero-subtitle': 'We are dedicated to creating immersive gaming experiences and unforgettable character stories',
                 'hero-cta': 'Explore Our Worlds',
                 'games-title': 'Our Games',
                 'game1-title': 'Chem001',
-                'game1-desc': 'A 2D RPG adventure game. Player will discover the secrets of chemistry, growing together with the characters.',
+                'game1-desc': 'An open-world space exploration game where players can build their own interstellar empire in the vast universe.',
                 'game1-cta': 'Learn More',
                 'game2-title': 'Econ001',
-                'game2-desc': 'Strategy game on the economic development of the cities. Player has to manage growth and accumulate resources to expand and conquer',
+                'game2-desc': 'An immersive magical world RPG where you learn spells, brew potions, and interact with mystical creatures.',
                 'game2-cta': 'Learn More',
                 'game3-title': 'Hist001',
-                'game3-desc': 'A fast-paced battle action game, player has to overcome stages and experience different historical themes.',
+                'game3-desc': 'A fast-paced competitive shooter where you battle in high-tech arenas using futuristic weapons and unique abilities.',
                 'game3-cta': 'Learn More',
                 'game4-title': 'Stat001',
-                'game4-desc': '数据模拟游戏，尝试当企业的管理层。Simulation game for a player to work as a manager in company.',
+                'game4-desc': 'A fast-paced competitive shooter where you battle in high-tech arenas using futuristic weapons and unique abilities.',
                 'game4-cta': 'Learn More',
                 'characters-title': 'Popular Characters',
                 'character1-name': '003',
@@ -967,7 +753,7 @@
                 'contact-content': 'Lets start our infinite virtual journey',
                 'contact-channel': 'Contacts',
                 'contact-mail': 'Email: moa@biznetvigator.com',
-                'contact-area': 'Area: Hong Kong, China',                
+                'contact-area': 'Area: Hong Kong, China',
                 'footer-company': 'Company',
                 'footer-about': 'About Us',
                 'footer-careers': 'Careers',
@@ -991,7 +777,7 @@
 
         // 语言切换功能
         document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 const lang = this.getAttribute('data-lang');
                 if (translations[lang]) {
                     currentLang = lang;
@@ -1042,7 +828,7 @@
         }, 5000);
 
         // 页面滚动效果
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.padding = '10px 5%';
