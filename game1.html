@@ -8,6 +8,13 @@
     <!--<script src="https://cdn.tailwindcss.com"></script>-->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
+        .no-download {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+    </style>
+    <style>
         /* 基础样式 */
         :root {
             --primary-color: #ff3366;
@@ -280,7 +287,7 @@
             }
 
         .game-image {
-            height: 200px;
+            height: 500px;
             background-color: #333;
             background-size: cover;
             background-position: center;
@@ -575,6 +582,7 @@
                 <li><a href="index.html" data-lang-key="nav-home">首页</a></li>
                 <li><a href="index.html#games" data-lang-key="nav-games">游戏</a></li>
                 <li><a href="index.html#char" data-lang-key="nav-characters">角色</a></li>
+                <li><a href="index.html#shop" data-lang-key="nav-shop">商品</a></li>
                 <li><a href="index.html#media" data-lang-key="nav-media">媒体</a></li>
                 <li><a href="index.html#about" data-lang-key="nav-about">关于我们</a></li>
                 <li><a href="index.html#contact" data-lang-key="nav-contact">联系我们</a></li>
@@ -582,10 +590,11 @@
         </nav>
         <div class="language-selector">
             <button class="language-btn">
-                <span data-lang-key="current-lang">中文</span> ▼
+                <span data-lang-key="current-lang">繁體中文</span> ▼
             </button>
             <div class="language-dropdown">
-                <div class="language-option" data-lang="zh-CN">中文</div>
+                <div class="language-option" data-lang="sc-CN">简体中文</div>
+                <div class="language-option" data-lang="tc-CN">繁體中文</div>
                 <div class="language-option" data-lang="en-US">English</div>
                 <div class="language-option" data-lang="ja-JP">日本語</div>
                 <div class="language-option" data-lang="ko-KR">한국어</div>
@@ -599,7 +608,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 data-lang-key="hero-title">Chem001</h1>
-            <p data-lang-key="hero-subtitle">我们致力于打造沉浸式的游戏体验与令人难忘的角色故事</p>
+            <p data-lang-key="hero-subtitle">在此游戏中，玩家将进入一个互动的化学世界，在其中发现元素的奥秘，化学反应的规律，化学成分的来源，工业用途与实验模拟。游戏里加插了小测验的功能，除了让学习变得有趣，系统将基于答题的数据分析评估玩家的进度并给予反馈。</p>
             <a href="#" class="cta-button" data-lang-key="hero-cta">探索我们的世界</a>
         </div>
         <div class="hero-bg">
@@ -612,21 +621,114 @@
         <div class="floating-element" style="width: 80px; height: 80px; top: 80%; left: 20%;"></div>
     </section>
 
+
+
+    <!-- 游戏内容区 -->
+    <section class="media-section" id="media">
+        <h2 class="section-title" data-lang-key="media-title">游戏内容</h2>
+        <div class="media-container">
+            <!-- 内容项1 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <!-- 这里可以添加视频 -->
+                    <!-- 示例：<video controls><source src="trailer.mp4" type="video/mp4"></video> -->
+                    <!-- 这里可以添加图片 -->
+                    <!-- 示例：<img src="artwork1.jpg" alt="艺术作品"> -->
+                    <img src="Images/Cap_Menu.jpg" alt="Mainboard" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content1-caption">主板</div>
+            </div>
+
+            <!-- 内容项2 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Attribute.jpg" alt="Character Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content2-caption">角色羁绊</div>
+            </div>
+
+            <!-- 内容项3 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Battle.jpg" alt="Battle Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content3-caption">战斗</div>
+            </div>
+        </div>
+
+        <pre> </pre>
+
+        <div class="media-container">
+            <!-- 内容项4 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Lab.jpg" alt="Crafting Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content4-caption">合成</div>
+            </div>
+
+            <!-- 内容项5 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Gallery.jpg" alt="Collection Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content5-caption">卡牌收集</div>
+            </div>
+
+            <!-- 内容项6 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Garage.jpg" alt="Weapon Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content6-caption">武器道具</div>
+            </div>
+        </div>
+
+        <pre> </pre>
+
+        <div class="media-container">
+            <!-- 媒体项7 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Factory.jpg" alt="Factory Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content7-caption">道具制造</div>
+            </div>
+
+            <!-- 内容项8 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Cap_Shop.jpg" alt="Shop Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content8-caption">商店</div>
+            </div>
+
+            <!-- 内容项9 -->
+            <div class="media-item">
+                <div class="media-placeholder">
+                    <img src="Images/Chem04.jpg" alt="Question Scene" width=380 height=220 class="no-download">
+                </div>
+                <div class="media-caption" data-lang-key="content9-caption">问题集</div>
+            </div>
+        </div>
+
+    </section>
+
     <!-- 游戏展示区 -->
     <section class="games-section" id="games">
-        <!--<h2 class="section-title" data-lang-key="games-title">我们的游戏</h2>-->
+        <h2 class="section-title" data-lang-key="games-title">游戏说明</h2>
         <div class="games-grid">
             <!-- 游戏卡片1 -->
- 
+
             <div class="game-card">
-                <img src="Images/MOAexpoWeb1.jpg" alt="Chem001" width="600" height="450">
+
                 <div class="game-image" style="background-color: #1a1a2e;">
                     <!-- 这里可以添加游戏图片 -->
                     <!-- 示例：<img src="game1.jpg" alt="游戏1"> -->
 
-                    <div style="display: flex; align-items: center; justify-content: center; height: 200%; color: var(--gray-text);">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏1图片位置-->
-
+                        <img src="Images/MOAexpoWeb1.jpg" alt="Description" width="600" height="450" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -639,141 +741,74 @@
         </div>
     </section>
 
-
     <script>
         // 多语言支持
         const translations = {
-            'zh-CN': {
+            'sc-CN': {
                 'nav-home': '首页',
                 'nav-games': '游戏',
                 'nav-characters': '角色',
+                'nav-shop': '商品',
                 'nav-media': '媒体',
                 'nav-about': '关于我们',
                 'nav-contact': '联系我们',
-                'current-lang': '中文',
+                'current-lang': '简体中文',
                 'hero-title': 'Chem001',
-                'hero-subtitle': '我们致力于打造沉浸式的游戏体验与令人难忘的角色故事',
+                'hero-subtitle': '在此游戏中，玩家将进入一个互动的化学世界，在其中发现元素的奥秘，化学反应的规律，化学成分的来源，工业用途与实验模拟。游戏里加插了小测验的功能，除了让学习变得有趣，系统将基于答题的数据分析评估玩家的进度并给予反馈。',
                 'hero-cta': '探索我们的世界',
-                'games-title': '我们的游戏',
+                'media-title': '游戏内容',
+                'content1-caption': '主板',
+                'content2-caption': '角色羁绊',
+                'content3-caption': '战斗',
+                'content4-caption': '合成',
+                'content5-caption': '卡牌收集',
+                'content6-caption': '武器道具',
+                'content7-caption': '道具制造',
+                'content8-caption': '商店',
+                'content9-caption': '问题集',
+                'games-title': '游戏说明',
                 'game1-title': 'Chem001',
-                'game1-desc': '一款开放世界太空探索游戏，玩家可以在浩瀚宇宙中建立自己的星际帝国。',
-                'game1-cta': '了解更多',
-                'game2-title': 'Econ001',
-                'game2-desc': '沉浸式魔法世界角色扮演游戏，学习咒语、制作魔药并与神秘生物互动。',
-                'game2-cta': '了解更多',
-                'game3-title': 'Hist001',
-                'game3-desc': '快节奏竞技射击游戏，在高科技竞技场中使用未来武器与独特能力对战。',
-                'game3-cta': '了解更多',
-                'game4-title': 'Stat001',
-                'game4-desc': '快节奏竞技射击游戏，在高科技竞技场中使用未来武器与独特能力对战。',
-                'game4-cta': '了解更多',
-                'characters-title': '人气角色',
-                'character1-name': '003',
-                'character1-desc': '来自遥远星系的旅行者，掌握着操控星辰的神秘力量。她正在寻找失散的家人，同时保护着宇宙的平衡。',
-                'character1-cta': '查看详情',
-                'character2-name': '004',
-                'character2-desc': '森林的守护者，能与自然元素沟通。她敏捷如风，神秘莫测，总是在关键时刻出现拯救需要帮助的人。',
-                'character2-cta': '查看详情',
-                'character3-name': '015',
-                'character3-desc': '曾经是皇家卫队的精英战士，现在为了正义而战。剑术无人能及，火焰之力可以熔化最坚硬的金属。',
-                'character3-cta': '查看详情',
-                'character4-name': '017',
-                'character4-desc': '非常注重整齐与环境清洁，有着不一般的洁癖。',
-                'character4-cta': '查看详情',
-                'media-title': '媒体内容',
-                'media1-caption': '最新游戏预告片',
-                'media2-caption': '角色概念艺术',
-                'media3-caption': '开发幕后花絮',
-                'about-title': '关于我们',
-                'about-content': '金石凌躍 MOVEMENT OF ARTICULATION 致力于为客户提供创新的游戏场景应用方案，帮助客户应对数字化转型挑战。',
-                'contact-title': '联系我们',
-                'contact-content': '让我们开启您的虚拟无尽之旅',
-                'contact-channel': '联系方式',
-                'contact-mail': '邮箱：moa@biznetvigator.com',
-                'contact-area': '地区：中国。香港',
-                'footer-company': '公司',
-                'footer-about': '关于我们',
-                'footer-careers': '招聘信息',
-                'footer-news': '新闻中心',
-                'footer-games': '游戏',
-                'footer-support': '支持',
-                'footer-help': '帮助中心',
-                'footer-contact': '联系我们',
-                'footer-faq': '常见问题',
-                'footer-connect': '关注我们',
-                'footer-twitter': 'Twitter',
-                'footer-facebook': 'Facebook',
-                'footer-instagram': 'Instagram',
-                'footer-copyright': '© 2026 金石凌躍 版权所有'
             },
             'en-US': {
                 'nav-home': 'Home',
                 'nav-games': 'Games',
                 'nav-characters': 'Characters',
+                'nav-shop': 'Merchandise',
                 'nav-media': 'Media',
                 'nav-about': 'About Us',
                 'nav-contact': 'Contact',
                 'current-lang': 'English',
                 'hero-title': 'Chem001',
-                'hero-subtitle': 'We are dedicated to creating immersive gaming experiences and unforgettable character stories',
+                'hero-subtitle': 'In this RPG game, player would enter an interactive world of chemistry, discovering the contents of elements, chemical  reaction, quantified formula, sources in nature, industrial  usage and experiment simulations in-game. Assisting the step by step learning, there is also in-game quiz to assess the improvement done by players from time to time, while a gamified experience brings a lot of fun to the learning progress.',
                 'hero-cta': 'Explore Our Worlds',
-                'games-title': 'Our Games',
+                'media-title': 'Game Contents',
+                'content1-caption': 'Mainboard',
+                'content2-caption': 'Character',
+                'content3-caption': 'Battle',
+                'content4-caption': 'Laboratory',
+                'content5-caption': 'Card Collection',
+                'content6-caption': 'Weapon',
+                'content7-caption': 'Crafting',
+                'content8-caption': 'Shop',
+                'content9-caption': 'Quiz',
+                'games-title': 'Description',
                 'game1-title': 'Chem001',
-                'game1-desc': 'An open-world space exploration game where players can build their own interstellar empire in the vast universe.',
-                'game1-cta': 'Learn More',
-                'game2-title': 'Econ001',
-                'game2-desc': 'An immersive magical world RPG where you learn spells, brew potions, and interact with mystical creatures.',
-                'game2-cta': 'Learn More',
-                'game3-title': 'Hist001',
-                'game3-desc': 'A fast-paced competitive shooter where you battle in high-tech arenas using futuristic weapons and unique abilities.',
-                'game3-cta': 'Learn More',
-                'game4-title': 'Stat001',
-                'game4-desc': 'A fast-paced competitive shooter where you battle in high-tech arenas using futuristic weapons and unique abilities.',
-                'game4-cta': 'Learn More',
-                'characters-title': 'Popular Characters',
-                'character1-name': '003',
-                'character1-desc': 'A traveler from a distant galaxy, mastering the mysterious power to control stars. She is searching for her lost family while protecting the balance of the universe.',
-                'character1-cta': 'View Details',
-                'character2-name': '004',
-                'character2-desc': 'Guardian of the forest, able to communicate with natural elements. She is as agile as the wind, mysterious and unpredictable, always appearing at critical moments to save those in need.',
-                'character2-cta': 'View Details',
-                'character3-name': 'Spirit Wind',
-                'character3-desc': 'Once an elite warrior of the Royal Guard, now fighting for justice. Her swordsmanship is unparalleled, and her flame power can melt the hardest metals.',
-                'character3-cta': 'View Details',
-                'character4-name': '017',
-                'character4-desc': 'A symbol of tidiness and cleaness, even a dust is not allowed in her world.',
-                'character4-cta': 'View Details',
-                'media-title': 'Media Content',
-                'media1-caption': 'Latest Game Trailer',
-                'media2-caption': 'Character Concept Art',
-                'media3-caption': 'Behind the Scenes',
-                'about-title': 'About',
-                'about-content': '金石凌躍 MOVEMENT OF ARTICULATION is devoted to provide our client with Game As A Service, letting technology to serve business needs in this digital era.',
-                'contact-title': 'Contact Us',
-                'contact-content': 'Lets start our infinite virtual journey',
-                'contact-channel': 'Contacts',
-                'contact-mail': 'Email: moa@biznetvigator.com',
-                'contact-area': 'Area: Hong Kong, China',
-                'footer-company': 'Company',
-                'footer-about': 'About Us',
-                'footer-careers': 'Careers',
-                'footer-news': 'News',
-                'footer-games': 'Games',
-                'footer-support': 'Support',
-                'footer-help': 'Help Center',
-                'footer-contact': 'Contact Us',
-                'footer-faq': 'FAQ',
-                'footer-connect': 'Follow Us',
-                'footer-twitter': 'Twitter',
-                'footer-facebook': 'Facebook',
-                'footer-instagram': 'Instagram',
-                'footer-copyright': '© 2026 MOVEMENT OF ARTICULATION LIMITED All Rights Reserved'
             }
             // 其他语言可以在这里添加
         };
 
         // 当前语言
-        let currentLang = 'zh-CN';
+        // let currentLang = 'zh-CN';
+        let currentLang = localStorage.getItem('preferred-language') || 'sc-CN';
+
+        // 页面加载时应用语言
+        document.addEventListener('DOMContentLoaded', function () {
+            updateLanguage();
+
+            // 设置语言选择器的当前语言显示
+            document.querySelector('.language-btn span').textContent =
+                translations[currentLang]['current-lang'];
+        });
 
         // 语言切换功能
         document.querySelectorAll('.language-option').forEach(option => {
@@ -781,6 +816,7 @@
                 const lang = this.getAttribute('data-lang');
                 if (translations[lang]) {
                     currentLang = lang;
+                    localStorage.setItem('preferred-language', lang);
                     updateLanguage();
 
                     // 更新当前语言显示

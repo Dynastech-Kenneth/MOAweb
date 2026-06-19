@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金石凌躍 - 创造无限可能</title>
+    <title>金石凌躍有限公司 - MOVEMENT OF ARTICULATION LIMITED</title>
     <link rel="icon" type="image/x-icon" href="Images/moa.png">
     <!--<script src="https://cdn.tailwindcss.com"></script>-->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .no-download {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+    </style>
     <style>
         /* 基础样式 */
         :root {
@@ -151,7 +158,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(18,18,18,0.9), rgba(18,18,18,0.5)), url('Images/OverallCover.jpg') center/cover;
+            background: linear-gradient(rgba(18,18,18,0.9), rgba(18,18,18,0.5)), url('Images/RPG_Cover01.png') center/cover;
             /* background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%), url('Images/2024042301i.jpg') center/cover;*/
         }
 
@@ -374,6 +381,44 @@
                 background: var(--secondary-color);
             }
 
+        /* 周边商品区 */
+        .shop-section {
+            padding: 100px 5%;
+            background-color: var(--darker-bg);
+        }
+
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .shop-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .shop-item:hover {
+                transform: scale(1.03);
+            }
+
+        .shop-placeholder {
+            height: 280px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+        }
+
+        .shop-caption {
+            padding: 15px;
+            text-align: center;
+            color: var(--light-text);
+        }
+
         /* 媒体内容区 */
         .media-section {
             padding: 100px 5%;
@@ -567,7 +612,7 @@
     <!-- 导航栏 -->
     <header>
         <div class="logo">
-            <img src="Images/moa.png" alt="MOA logo" width="38" height="38">
+            <img src="Images/moa.png" alt="MOA logo" width="38" height="38" class="no-download">
             MOA 金石凌躍
         </div>
         <nav>
@@ -575,6 +620,7 @@
                 <li><a href="#" data-lang-key="nav-home">首页</a></li>
                 <li><a href="#games" data-lang-key="nav-games">游戏</a></li>
                 <li><a href="#char" data-lang-key="nav-characters">角色</a></li>
+                <li><a href="#shop" data-lang-key="nav-shop">商品</a></li>
                 <li><a href="#media" data-lang-key="nav-media">媒体</a></li>
                 <li><a href="#about" data-lang-key="nav-about">关于我们</a></li>
                 <li><a href="#contact" data-lang-key="nav-contact">联系我们</a></li>
@@ -582,10 +628,11 @@
         </nav>
         <div class="language-selector">
             <button class="language-btn">
-                <span data-lang-key="current-lang">中文</span> ▼
+                <span data-lang-key="current-lang">繁體中文</span> ▼
             </button>
             <div class="language-dropdown">
-                <div class="language-option" data-lang="zh-CN">中文</div>
+                <div class="language-option" data-lang="sc-CN">简体中文</div>
+                <div class="language-option" data-lang="tc-CN">繁體中文</div>
                 <div class="language-option" data-lang="en-US">English</div>
                 <div class="language-option" data-lang="ja-JP">日本語</div>
                 <div class="language-option" data-lang="ko-KR">한국어</div>
@@ -624,7 +671,7 @@
 
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏1图片位置-->
-                        <img src="Images/Cover_Chem001.jpg" alt="Chem001" width="350" height="196.875">
+                        <img src="Images/Cover_Chem001.jpg" alt="Chem001" width="350" height="196.875" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -640,7 +687,7 @@
                     <!-- 这里可以添加游戏图片 -->
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏2图片位置-->
-                        <img src="Images/Cover_Econ001.jpg" alt="Econ001" width="350" height="196.875">
+                        <img src="Images/Cover_Econ001.jpg" alt="Econ001" width="350" height="196.875" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -656,7 +703,7 @@
                     <!-- 这里可以添加游戏图片 -->
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏3图片位置-->
-                        <img src="Images/Cover_Hist001.jpg" alt="Hist001" width="350" height="196.875">
+                        <img src="Images/Cover_Hist001.jpg" alt="Hist001" width="350" height="196.875" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -667,12 +714,12 @@
             </div>
 
             <!-- 游戏卡片4 -->
-            <div class="game-card" id="game4">
-                <div class="game-image" style="background-color: #2a1e2a;">
+            <!--<div class="game-card" id="game4">
+                <div class="game-image" style="background-color: #2a1e2a;">-->
                     <!-- 这里可以添加游戏图片 -->
-                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
+                    <!--<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">-->
                         <!--游戏4图片位置-->
-                        <img src="Images/MOA_game_covers1.jpg" alt="Stat001" width="350" height="196.875">
+                        <!--<img src="Images/MOA_game_covers1.jpg" alt="Stat001" width="350" height="196.875" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -680,7 +727,7 @@
                     <p class="game-description" data-lang-key="game4-desc">数据模拟游戏，尝试当企业的管理层。</p>
                     <a href="#" class="cta-button" data-lang-key="game4-cta">了解更多</a>
                 </div>
-            </div>
+            </div>-->
 
         </div>
     </section>
@@ -734,41 +781,96 @@
         </div>
     </section>
 
+    <!-- 周边商品区 -->
+    <section class="shop-section" id="shop">
+        <h2 class="section-title" data-lang-key="shop-title">周边商品</h2>
+        <div class="shop-container">
+            <!-- 商品项1 -->
+            <div class="shop-item">
+                <div class="shop-placeholder">
+                    <img src="Images/FolderImg003.png" alt="Folder003" width="380" height="280" class="no-download">
+                </div>
+                <div class="shop-caption" data-lang-key="shop1-caption">003 文件夹</div>
+            </div>
+
+            <!-- 商品项2 -->
+            <div class="shop-item">
+                <div class="shop-placeholder">
+                    <img src="Images/FolderImg004.png" alt="Folder004" width="380" height="280" class="no-download">
+                </div>
+                <div class="shop-caption" data-lang-key="shop2-caption">004 文件夹</div>
+            </div>
+
+            <!-- 商品项3 -->
+            <div class="shop-item">
+                <div class="shop-placeholder">
+                    <img src="Images/FolderImg013.png" alt="Folder013" width="380" height="280" class="no-download">
+                </div>
+                <div class="shop-caption" data-lang-key="shop3-caption">013 文件夹</div>
+            </div>
+        </div>
+        <pre> </pre>
+        <div class="shop-container">
+            <!-- 商品项4 -->
+            <div class="shop-item">
+                <div class="shop-placeholder">
+                    <img src="Images/FolderImg014.png" alt="Folder014" width="380" height="280" class="no-download">
+                </div>
+                <div class="shop-caption" data-lang-key="shop4-caption">014 文件夹</div>
+            </div>
+
+            <!-- 商品项5 -->
+            <div class="shop-item">
+                <div class="shop-placeholder">
+                    <img src="Images/FolderImg015.png" alt="Folder015" width="380" height="280" class="no-download">
+                </div>
+                <div class="shop-caption" data-lang-key="shop5-caption">015 文件夹</div>
+            </div>
+
+            <!-- 商品项6 -->
+            <div class="shop-item">
+                <div class="shop-placeholder">
+                    <img src="Images/FolderImg016.png" alt="Folder016" width="380" height="280" class="no-download">
+                </div>
+                <div class="shop-caption" data-lang-key="shop6-caption">016 文件夹</div>
+            </div>
+        </div>
+    </section>
+
     <!-- 媒体内容区 -->
     <section class="media-section" id="media">
         <h2 class="section-title" data-lang-key="media-title">媒体内容</h2>
         <div class="media-container">
-            <!-- 媒体项1 - 视频 -->
+            <!-- 媒体项1 -->
             <div class="media-item">
                 <div class="media-placeholder">
-                    <!-- 这里可以添加视频 -->
-                    <!-- 示例：<video controls><source src="trailer.mp4" type="video/mp4"></video> -->
-                    视频内容位置
+                    <iframe id="video-player-1" width="640" height="360" src="https://www.youtube-nocookie.com/embed/FJ7wauVx6NM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                            referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
                 </div>
-                <div class="media-caption" data-lang-key="media1-caption">最新游戏预告片</div>
+                <div class="media-caption" data-lang-key="media1-caption">公司简介</div>
             </div>
 
-            <!-- 媒体项2 - 图片 -->
+            <!-- 媒体项2 -->
             <div class="media-item">
                 <div class="media-placeholder">
                     <!-- 这里可以添加图片 -->
                     <!-- 示例：<img src="artwork1.jpg" alt="艺术作品"> -->
                     概念艺术位置
                 </div>
-                <div class="media-caption" data-lang-key="media2-caption">角色概念艺术</div>
+                <div class="media-caption" data-lang-key="media2-caption">概念艺术</div>
             </div>
 
-            <!-- 媒体项3 - 视频 -->
+            <!-- 媒体项3 -->
             <div class="media-item">
                 <div class="media-placeholder">
-                    <!-- 这里可以添加视频 -->
-                    <!-- 示例：<video controls><source src="behind-scenes.mp4" type="video/mp4"></video> -->
-                    幕后花絮位置
+                    <img src="Images/MOAlinkedin_202507.jpg" alt="Expo" width="380" height="250" class="no-download">
                 </div>
-                <div class="media-caption" data-lang-key="media3-caption">开发幕后花絮</div>
+                <div class="media-caption" data-lang-key="media3-caption">2025年7月 参展香港学与教博览</div>
             </div>
         </div>
     </section>
+
 
     <!-- 关于我们 -->
     <section class="about-section" id="about">
@@ -778,16 +880,23 @@
 
 
             <div class="about-block">
-                <h3><class ="about-placeholder"></i> 公司介绍</h3>
+                <h3><p data-lang-key="about-intro"> 企业愿景</p></h3>
+                <pre> </pre>
                 <div class="about-item">
-                    <p data-lang-key="about-content">金石凌躍 MOVEMENT OF ARTICULATION 致力于为客户提供创新的游戏场景应用方案，帮助客户应对数字化转型挑战。</p>
+                    <pre> </pre>
+                    <p data-lang-key="about-content">金石凌躍有限公司(MOA)秉持创业时理念，将“让学习变快乐”的理想注入产品当中。以程序为载体，以知识为原料，打造兼具娱乐性与知识性的游戏。目前开发的游戏分别以化学、经济、历史为主题，并以游戏为基础扩展至商品设计、自媒体与授权等业务，务求令游戏打造的世界观能在存在于虚拟与现实世界。</p>
+                    <pre> </pre>
                 </div>
             </div>
             <div class="about-block">
-                <h3><i class="fas fa-image"></i> 团队照片</h3>
+                <h3><p data-lang-key="about-newsletter">业务概览册</p> </h3>
+                <pre> </pre>
                 <div class="editable media">
-                    <i class="fas fa-image fa-3x"></i>
+                    <!-- <i class="fas fa-image fa-3x"></i>-->
                     <!--<p>在此处添加团队照片或图片</p>-->
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
+                        <img src="Images/NewsletterMOA2026_01.png" alt="Newsletter2026" width="450" height="550" class="no-download">
+                    </div>
                 </div>
             </div>
         </div>
@@ -795,7 +904,7 @@
 
     <!-- 联系我们 -->
     <section class="contact-section" id="contact">
-        
+
         <div class="contact-container">
             <div class="section-title">
                 <h2 data-lang-key="contact-title">联系我们</h2>
@@ -804,9 +913,11 @@
             <div class="contact-block">
                 <h3><i class="fas fa-map-marker-alt" data-lang-key="contact-channel">联系方式</i></h3>
                 <div class="contact-item">
+                    <pre> </pre>
                     <!--<p>  电话：+852 5223 0024 / +86 13049485637</p>-->
                     <p data-lang-key="contact-mail">  邮箱：moa@biznetvigator.com</p>
                     <p data-lang-key="contact-area">  地区：中国。香港</p>
+                    <pre> </pre>
                 </div>
             </div>
         </div>
@@ -829,7 +940,7 @@
                     <li><a href="#game1" data-lang-key="game1-title">Chem001</a></li>
                     <li><a href="#game2" data-lang-key="game2-title">Econ001</a></li>
                     <li><a href="#game3" data-lang-key="game3-title">Hist001</a></li>
-                    <li><a href="#game4" data-lang-key="game4-title">Stat001</a></li>
+                    <!--<li><a href="#game4" data-lang-key="game4-title">Stat001</a></li>-->
                 </ul>
             </div>
             <div class="footer-column">
@@ -843,9 +954,10 @@
             <div class="footer-column">
                 <h3 data-lang-key="footer-connect">关注我们</h3>
                 <ul>
-                    <li><a href="#" data-lang-key="footer-twitter">Twitter</a></li>
-                    <li><a href="#" data-lang-key="footer-facebook">Facebook</a></li>
-                    <li><a href="#" data-lang-key="footer-instagram">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@MOAADMIN" data-lang-key="footer-youtube">Youtube</a></li>
+                    <!--<li><a href="#" data-lang-key="footer-twitter">Twitter</a></li>-->
+                    <!--<li><a href="#" data-lang-key="footer-facebook">Facebook</a></li>-->
+                    <!--<li><a href="#" data-lang-key="footer-instagram">Instagram</a></li>-->
                 </ul>
             </div>
         </div>
@@ -857,14 +969,15 @@
     <script>
         // 多语言支持
         const translations = {
-            'zh-CN': {
+            'sc-CN': {
                 'nav-home': '首页',
                 'nav-games': '游戏',
                 'nav-characters': '角色',
+                'nav-shop': '商品',
                 'nav-media': '媒体',
                 'nav-about': '关于我们',
                 'nav-contact': '联系我们',
-                'current-lang': '中文',
+                'current-lang': '简体中文',
                 'hero-title': '创造无限可能',
                 'hero-subtitle': '我们致力于打造沉浸式的游戏体验与令人难忘的角色故事',
                 'hero-cta': '探索我们的世界',
@@ -894,12 +1007,21 @@
                 'character4-name': '017',
                 'character4-desc': '非常注重整齐与环境清洁，有着不一般的洁癖。',
                 'character4-cta': '查看详情',
+                'shop-title': '周边商品',
+                'shop1-caption': '003 文件夹',
+                'shop2-caption': '004 文件夹',
+                'shop3-caption': '013 文件夹',
+                'shop4-caption': '014 文件夹',
+                'shop5-caption': '015 文件夹',
+                'shop6-caption': '016 文件夹',
                 'media-title': '媒体内容',
-                'media1-caption': '最新游戏预告片',
+                'media1-caption': '公司简介',
                 'media2-caption': '角色概念艺术',
-                'media3-caption': '开发幕后花絮',
+                'media3-caption': '2025年7月 参展香港学与教博览',
                 'about-title': '关于我们',
-                'about-content': '金石凌躍 MOVEMENT OF ARTICULATION 致力于为客户提供创新的游戏场景应用方案，帮助客户应对数字化转型挑战。',
+                'about-intro': '企业愿景',
+                'about-content': '金石凌躍有限公司(MOA)秉持创业时理念，将“让学习变快乐”的理想注入产品当中。以程序为载体，以知识为原料，打造兼具娱乐性与知识性的游戏。目前开发的游戏分别以化学、经济、历史为主题，并以游戏为基础扩展至商品设计、自媒体与授权等业务，务求令游戏打造的世界观能在存在于虚拟与现实世界。',
+                'about-newsletter': '业务概览册',
                 'contact-title': '联系我们',
                 'contact-content': '让我们开启您的虚拟无尽之旅',
                 'contact-channel': '联系方式',
@@ -918,12 +1040,14 @@
                 'footer-twitter': 'Twitter',
                 'footer-facebook': 'Facebook',
                 'footer-instagram': 'Instagram',
+                'footer-youtube': 'Youtube',
                 'footer-copyright': '© 2026 金石凌躍 版权所有'
             },
             'en-US': {
                 'nav-home': 'Home',
                 'nav-games': 'Games',
                 'nav-characters': 'Characters',
+                'nav-shop': 'Merchandise',
                 'nav-media': 'Media',
                 'nav-about': 'About Us',
                 'nav-contact': 'Contact',
@@ -942,7 +1066,7 @@
                 'game3-desc': 'A fast-paced battle action game, player has to overcome stages and experience different historical themes.',
                 'game3-cta': 'Learn More',
                 'game4-title': 'Stat001',
-                'game4-desc': '数据模拟游戏，尝试当企业的管理层。Simulation game for a player to work as a manager in company.',
+                'game4-desc': 'Simulation game for a player to work as a manager in company.',
                 'game4-cta': 'Learn More',
                 'characters-title': 'Popular Characters',
                 'character1-name': '003',
@@ -957,17 +1081,26 @@
                 'character4-name': '017',
                 'character4-desc': 'A symbol of tidiness and cleaness, even a dust is not allowed in her world.',
                 'character4-cta': 'View Details',
+                'shop-title': 'Merchandise',
+                'shop1-caption': 'Folder 003',
+                'shop2-caption': 'Folder 004',
+                'shop3-caption': 'Folder 013',
+                'shop4-caption': 'Folder 014',
+                'shop5-caption': 'Folder 015',
+                'shop6-caption': 'Folder 016',
                 'media-title': 'Media Content',
-                'media1-caption': 'Latest Game Trailer',
-                'media2-caption': 'Character Concept Art',
-                'media3-caption': 'Behind the Scenes',
+                'media1-caption': 'Company Introduction',
+                'media2-caption': 'Concept Art',
+                'media3-caption': 'July 2025, Learning and Teaching Expo in Hong Kong',
                 'about-title': 'About',
-                'about-content': '金石凌躍 MOVEMENT OF ARTICULATION is devoted to provide our client with Game As A Service, letting technology to serve business needs in this digital era.',
+                'about-intro': 'Our vision',
+                'about-content': 'MOVEMENT OF ARTICULATION LIMITED (MOA) upholds its founding principles, infusing its products with the ideal of "making learning joyful." Using programs as a medium and knowledge as raw materials, we create games that combine entertainment and education. Currently, our games are themed around chemistry, economics, and history, and we has expanded from games to product design, social media, and licensing, striving to ensure that the worldviews created by its games resonate with both the real and virtual worlds.',
+                'about-newsletter': 'Business Brochure',
                 'contact-title': 'Contact Us',
                 'contact-content': 'Lets start our infinite virtual journey',
                 'contact-channel': 'Contacts',
                 'contact-mail': 'Email: moa@biznetvigator.com',
-                'contact-area': 'Area: Hong Kong, China',                
+                'contact-area': 'Area: Hong Kong, China',
                 'footer-company': 'Company',
                 'footer-about': 'About Us',
                 'footer-careers': 'Careers',
@@ -981,13 +1114,24 @@
                 'footer-twitter': 'Twitter',
                 'footer-facebook': 'Facebook',
                 'footer-instagram': 'Instagram',
+                'footer-youtube': 'Youtube',
                 'footer-copyright': '© 2026 MOVEMENT OF ARTICULATION LIMITED All Rights Reserved'
             }
             // 其他语言可以在这里添加
         };
 
         // 当前语言
-        let currentLang = 'zh-CN';
+        // let currentLang = 'zh-CN';
+        let currentLang = localStorage.getItem('preferred-language') || 'sc-CN';
+
+        // 页面加载时应用语言
+        document.addEventListener('DOMContentLoaded', function () {
+            updateLanguage();
+
+            // 设置语言选择器的当前语言显示
+            document.querySelector('.language-btn span').textContent =
+                translations[currentLang]['current-lang'];
+        });
 
         // 语言切换功能
         document.querySelectorAll('.language-option').forEach(option => {
@@ -995,6 +1139,7 @@
                 const lang = this.getAttribute('data-lang');
                 if (translations[lang]) {
                     currentLang = lang;
+                    localStorage.setItem('preferred-language', lang);
                     updateLanguage();
 
                     // 更新当前语言显示
@@ -1012,7 +1157,34 @@
                     element.textContent = translations[currentLang][key];
                 }
             });
+            updateUrl();
         }
+
+        function updateUrl() {
+            const iframeElement = document.getElementById('video-player-1');
+            if (currentLang == "sc-CN") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/FJ7wauVx6NM';
+            }
+            else if (currentLang == "tc-CN") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+            }
+            else if (currentLang == "en-US") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+            }
+            else if (currentLang == "ja-JP") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/A9-ZWk800Jg';
+            }
+            else if (currentLang == "ko-KR") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+            }
+            else if (currentLang == "ru-RU") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+            }
+            else if (currentLang == "fr-FR") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+            }
+        }
+
 
         // 角色轮播功能
         const slides = document.querySelectorAll('.character-slide');
