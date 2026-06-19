@@ -716,7 +716,7 @@
 
     <!-- 游戏展示区 -->
     <section class="games-section" id="games">
-        <h2 class="section-title" data-lang-key="games-title">游戏说明</h2>
+        <h2 class="section-title" data-lang-key="games-title">说明</h2>
         <div class="games-grid">
             <!-- 游戏卡片1 -->
 
@@ -766,7 +766,32 @@
                 'content7-caption': '道具制造',
                 'content8-caption': '商店',
                 'content9-caption': '问题集',
-                'games-title': '游戏说明',
+                'games-title': '说明',
+                'game1-title': 'Chem001',
+            },
+            'tc-CN': {
+                'nav-home': '首頁',
+                'nav-games': '遊戲',
+                'nav-characters': '角色',
+                'nav-shop': '商品',
+                'nav-media': '媒體',
+                'nav-about': '關於我們',
+                'nav-contact': '聯絡我們',
+                'current-lang': '繁體中文',
+                'hero-title': 'Chem001',
+                'hero-subtitle': '在這個遊戲中，玩家將進入一個互動的化學世界，在其中發現元素的奧秘，化學反應的規律，化學成分的來源，工業用途與實驗模擬。遊戲裡加插了小測驗的功能，除了讓學習變得有趣，系統將基於答題的數據分析評估玩家的進度並給予回饋。',
+                'hero-cta': '探索我們的世界',
+                'media-title': '遊戲內容',
+                'content1-caption': '主板',
+                'content2-caption': '角色羈絆',
+                'content3-caption': '戰鬥',
+                'content4-caption': '合成',
+                'content5-caption': '卡牌收集',
+                'content6-caption': '武器道具',
+                'content7-caption': '道具製造',
+                'content8-caption': '商店',
+                'content9-caption': '問題集',
+                'games-title': '說明',
                 'game1-title': 'Chem001',
             },
             'en-US': {
@@ -793,13 +818,38 @@
                 'content9-caption': 'Quiz',
                 'games-title': 'Description',
                 'game1-title': 'Chem001',
+            },
+            'ja-JP': {
+                'nav-home': 'ホーム',
+                'nav-games': 'ゲーム',
+                'nav-characters': 'キャラクター',
+                'nav-shop': 'マーチャンダイズ',
+                'nav-media': 'メディア',
+                'nav-about': '企業情報',
+                'nav-contact': 'お問い合わせ',
+                'current-lang': '日本語',
+                'hero-title': 'Chem001',
+                'hero-subtitle': 'このゲームでは、プレイヤーはインタラクティブな化学の世界に入り込み、元素の謎、化学反応を支配する法則、化学成分の起源、産業応用、そして実験シミュレーションについて学びます。ゲームには楽しく学習できるクイズが含まれており、システムはプレイヤーの回答を分析して進捗状況を評価し、フィードバックを提供します。',
+                'hero-cta': '私たちの世界を探検してみよう',
+                'media-title': 'ゲーム内容',
+                'content1-caption': 'メニュー',
+                'content2-caption': 'キャラクターの絆',
+                'content3-caption': 'ファインティング',
+                'content4-caption': '合成',
+                'content5-caption': 'カードコレクション',
+                'content6-caption': '武器と小道具',
+                'content7-caption': '小道具作り',
+                'content8-caption': 'お店',
+                'content9-caption': '問題セット',
+                'games-title': '説明',
+                'game1-title': 'Chem001',
             }
             // 其他语言可以在这里添加
         };
 
         // 当前语言
         // let currentLang = 'zh-CN';
-        let currentLang = localStorage.getItem('preferred-language') || 'sc-CN';
+        let currentLang = localStorage.getItem('preferred-language') || 'tc-CN';
 
         // 页面加载时应用语言
         document.addEventListener('DOMContentLoaded', function () {
