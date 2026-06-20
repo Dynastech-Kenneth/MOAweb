@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="tc-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -334,10 +334,14 @@
             padding: 0 5%;
             background-size: cover;
             background-position: center;
+            visibility: hidden;
+            z-index: 1;
         }
 
             .character-slide.active {
                 opacity: 1;
+                visibility: visible;
+                z-index: 2; /* Brings the clickable link to the top */
             }
 
         .character-info {
@@ -671,7 +675,7 @@
 
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏1图片位置-->
-                        <img src="Images/Cover_Chem001.jpg" alt="Chem001" width="350" height="196.875" class="no-download">
+                        <img src="Images/Cover_Chem001.jpg" alt="Chem001" width="350" height="196" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -687,7 +691,7 @@
                     <!-- 这里可以添加游戏图片 -->
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏2图片位置-->
-                        <img src="Images/Cover_Econ001.jpg" alt="Econ001" width="350" height="196.875" class="no-download">
+                        <img src="Images/Cover_Econ001.jpg" alt="Econ001" width="350" height="196" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -703,7 +707,7 @@
                     <!-- 这里可以添加游戏图片 -->
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">
                         <!--游戏3图片位置-->
-                        <img src="Images/Cover_Hist001.jpg" alt="Hist001" width="350" height="196.875" class="no-download">
+                        <img src="Images/Cover_Hist001.jpg" alt="Hist001" width="350" height="196" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -719,7 +723,7 @@
                     <!-- 这里可以添加游戏图片 -->
                     <!--<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--gray-text);">-->
                         <!--游戏4图片位置-->
-                        <!--<img src="Images/MOA_game_covers1.jpg" alt="Stat001" width="350" height="196.875" class="no-download">
+                        <!--<img src="Images/MOA_game_covers1.jpg" alt="Stat001" width="350" height="196" class="no-download">
                     </div>
                 </div>
                 <div class="game-content">
@@ -741,7 +745,7 @@
                 <div class="character-info">
                     <h3 class="character-name" data-lang-key="character1-name">003</h3>
                     <p class="character-description" data-lang-key="character1-desc">来自遥远星系的旅行者，掌握着操控星辰的神秘力量。她正在寻找失散的家人，同时保护着宇宙的平衡。</p>
-                    <a href="#" class="cta-button" data-lang-key="character1-cta">查看详情</a>
+                    <a href="chemChar003.html" class="cta-button" data-lang-key="character1-cta">查看详情</a>
                 </div>
             </div>
 
@@ -750,7 +754,7 @@
                 <div class="character-info">
                     <h3 class="character-name" data-lang-key="character2-name">004</h3>
                     <p class="character-description" data-lang-key="character2-desc">森林的守护者，能与自然元素沟通。她敏捷如风，神秘莫测，总是在关键时刻出现拯救需要帮助的人。</p>
-                    <a href="#" class="cta-button" data-lang-key="character2-cta">查看详情</a>
+                    <a href="chemChar004.html" class="cta-button" data-lang-key="character2-cta">查看详情</a>
                 </div>
             </div>
 
@@ -759,7 +763,7 @@
                 <div class="character-info">
                     <h3 class="character-name" data-lang-key="character3-name">015</h3>
                     <p class="character-description" data-lang-key="character3-desc">曾经是皇家卫队的精英战士，现在为了正义而战。剑术无人能及，火焰之力可以熔化最坚硬的金属。</p>
-                    <a href="#" class="cta-button" data-lang-key="character3-cta">查看详情</a>
+                    <a href="chemChar015.html" class="cta-button" data-lang-key="character3-cta">查看详情</a>
                 </div>
             </div>
 
@@ -768,7 +772,7 @@
                 <div class="character-info">
                     <h3 class="character-name" data-lang-key="character4-name">017</h3>
                     <p class="character-description" data-lang-key="character4-desc">非常注重整齐与环境清洁，有着不一般的洁癖。</p>
-                    <a href="#" class="cta-button" data-lang-key="character4-cta">查看详情</a>
+                    <a href="chemChar008.html" class="cta-button" data-lang-key="character4-cta">查看详情</a>
                 </div>
             </div>
 
@@ -880,7 +884,7 @@
 
 
             <div class="about-block">
-                <h3><p data-lang-key="about-intro"> 企业愿景</p></h3>
+                <h3 class="game-title" data-lang-key="about-intro"> 企业愿景</h3>
                 <pre> </pre>
                 <div class="about-item">
                     <pre> </pre>
@@ -889,7 +893,7 @@
                 </div>
             </div>
             <div class="about-block">
-                <h3><p data-lang-key="about-newsletter">业务概览册</p> </h3>
+                <h3 class="game-title" data-lang-key="about-newsletter">业务概览册</h3>
                 <pre> </pre>
                 <div class="editable media">
                     <!-- <i class="fas fa-image fa-3x"></i>-->
@@ -1264,6 +1268,228 @@
                 'footer-instagram': 'Instagram',
                 'footer-youtube': 'Youtube',
                 'footer-copyright': '© 2026 金石凌躍有限公司 全著作権所有。'
+            },
+            'ko-KR': {
+                'nav-home': '홈페이지',
+                'nav-games': '게임',
+                'nav-characters': '캐릭터',
+                'nav-shop': '상품',
+                'nav-media': '메디아',
+                'nav-about': '회사 소개',
+                'nav-contact': '문의하기',
+                'current-lang': '한국어',
+                'hero-title': '무한한 가능성 창조',
+                'hero-subtitle': '저희는 몰입감 넘치는 게임 경험과 잊을 수 없는 캐릭터 스토리를 만드는 데 전념하고 있습니다.',
+                'hero-cta': '우리의 세계를 탐험해보세요',
+                'games-title': '우리 게임',
+                'game1-title': 'Chem001',
+                'game1-desc': '2D RPG 어드벤처 게임입니다. 플레이어는 캐릭터들과 함께 성장하며 화학의 비밀을 밝혀낼 수 있습니다.',
+                'game1-cta': '자세히 알아보기',
+                'game2-title': 'Econ001',
+                'game2-desc': '도시 경제 발전을 다루는 전략 게임입니다. 플레이어는 성장을 관리하고 자원을 축적하여 도시를 확장하고 정복해야 합니다.',
+                'game2-cta': '자세히 알아보기',
+                'game3-title': 'Hist001',
+                'game3-desc': '속도감 넘치는 전투 액션 게임으로, 플레이어는 다양한 스테이지를 클리어하고 여러 역사적 배경을 경험해야 합니다.',
+                'game3-cta': '자세히 알아보기',
+                'game4-title': 'Stat001',
+                'game4-desc': '플레이어가 회사에서 관리자 역할을 수행하는 시뮬레이션 게임입니다.',
+                'game4-cta': '자세히 알아보기',
+                'characters-title': '인기 캐릭터',
+                'character1-name': '003',
+                'character1-desc': '머나먼 은하계에서 온 여행자, 별을 조종하는 신비로운 힘을 손에 넣은 그녀는 잃어버린 가족을 찾아 나서는 동시에 우주의 균형을 지키고 있다.',
+                'character1-cta': '세부정보 보기',
+                'character2-name': '004',
+                'character2-desc': '숲의 수호자이자 자연의 요소들과 소통할 수 있는 존재. 바람처럼 민첩하고 신비로우며 예측 불가능한 그녀는 언제나 위급한 순간에 나타나 어려움에 처한 이들을 구한다.',
+                'character2-cta': '세부정보 보기',
+                'character3-name': 'Spirit Wind',
+                'character3-desc': '한때 왕실 근위대의 정예 전사였던 그녀는 이제 정의를 위해 싸우고 있다. 그녀의 검술은 비할 데 없으며, 그녀의 화염 능력은 가장 단단한 금속도 녹일 수 있다.',
+                'character3-cta': '세부정보 보기',
+                'character4-name': '017',
+                'character4-desc': '깔끔함과 청결함의 상징인 그녀에게는 먼지 한 톨도 허용되지 않습니다.',
+                'character4-cta': '세부정보 보기',
+                'shop-title': '상품',
+                'shop1-caption': '폴더 003',
+                'shop2-caption': '폴더 004',
+                'shop3-caption': '폴더 013',
+                'shop4-caption': '폴더 014',
+                'shop5-caption': '폴더 015',
+                'shop6-caption': '폴더 016',
+                'media-title': '미디어 콘텐츠',
+                'media1-caption': '우리 회사',
+                'media2-caption': '컨셉 아트',
+                'media3-caption': '2025년 7월, 홍콩에서 개최되는 학습 및 교육 박람회',
+                'about-title': '회사 소개',
+                'about-intro': '우리의 비전',
+                'about-content': 'MOVEMENT OF ARTICULATION LIMITED (MOA)는 창립 이념을 고수하며 "학습을 즐겁게 만든다"는 이상을 제품에 담아냅니다. 프로그램을 매개체로, 지식을 원자재로 삼아 오락과 교육을 결합한 게임을 개발합니다. 현재 화학, 경제, 역사 등을 주제로 한 게임을 선보이고 있으며, 게임뿐 아니라 제품 디자인, 소셜 미디어, 라이선싱 등으로 사업 영역을 확장하여 게임을 통해 제시하는 세계관이 현실 세계와 가상 세계 모두에 공감을 불러일으키도록 노력하고 있습니다.',
+                'about-newsletter': '뉴스레터',
+                'contact-title': '문의하기',
+                'contact-content': '무한한 가상 여행을 시작해 봅시다',
+                'contact-channel': '연락처 정보',
+                'contact-mail': '이메일: moa@biznetvigator.com',
+                'contact-area': '지역: 홍콩, 중국',
+                'footer-company': '회사',
+                'footer-about': '회사 소개',
+                'footer-careers': '채용 정보',
+                'footer-news': '뉴스 센터',
+                'footer-games': '게임',
+                'footer-support': '지원하다',
+                'footer-help': '도움말 센터',
+                'footer-contact': '문의하기',
+                'footer-faq': '자주 묻는 질문',
+                'footer-connect': '우리를 팔로우하세요',
+                'footer-twitter': 'Twitter',
+                'footer-facebook': 'Facebook',
+                'footer-instagram': 'Instagram',
+                'footer-youtube': 'Youtube',
+                'footer-copyright': '© 2026 MOVEMENT OF ARTICULATION LIMITED 모든 권리 보유'
+            },
+            'fr-FR': {
+                'nav-home': 'Page d‘accueil',
+                'nav-games': 'Jeux',
+                'nav-characters': 'Personnages',
+                'nav-shop': 'Marchandises',
+                'nav-media': 'Médias',
+                'nav-about': 'À propos de nous',
+                'nav-contact': 'Contactez-nous',
+                'current-lang': 'Français',
+                'hero-title': 'Créer des possibilités infinies',
+                'hero-subtitle': 'Nous nous engageons à créer des expériences de jeu immersives et des histoires de personnages inoubliables.',
+                'hero-cta': 'Explorez nos mondes',
+                'games-title': 'Nos jeux',
+                'game1-title': 'Chem001',
+                'game1-desc': 'Un jeu d‘aventure RPG en 2D.Le joueur découvrira les secrets de la chimie et évoluera aux côtés des personnages.',
+                'game1-cta': 'Apprendre encore plus',
+                'game2-title': 'Econ001',
+                'game2-desc': 'Jeu de stratégie sur le développement économique des villes. Le joueur doit gérer la croissance et accumuler des ressources pour s‘étendre et conquérir.',
+                'game2-cta': 'Apprendre encore plus',
+                'game3-title': 'Hist001',
+                'game3-desc': 'Jeu d‘action et de combat au rythme effréné, où le joueur doit surmonter des niveaux et découvrir différents thèmes historiques.',
+                'game3-cta': 'Apprendre encore plus',
+                'game4-title': 'Stat001',
+                'game4-desc': 'Jeu de simulation où le joueur travaille comme manager dans une entreprise.',
+                'game4-cta': 'Apprendre encore plus',
+                'characters-title': 'Personnages populaires',
+                'character1-name': '003',
+                'character1-desc': 'Une voyageuse venue d‘une galaxie lointaine, maîtrisant le mystérieux pouvoir de contrôler les étoiles.Elle recherche sa famille disparue tout en protégeant l‘équilibre de l‘univers.',
+                'character1-cta': 'Afficher les détails',
+                'character2-name': '004',
+                'character2-desc': 'Gardienne de la forêt, capable de communiquer avec les éléments. Agile comme le vent, mystérieuse et imprévisible, elle surgit toujours aux moments critiques pour sauver ceux qui sont en détresse.',
+                'character2-cta': 'Afficher les détails',
+                'character3-name': 'Spirit Wind',
+                'character3-desc': 'Autrefois guerrière d‘élite de la Garde Royale, elle combat désormais pour la justice.Son maniement de l‘épée est sans égal, et son pouvoir de flammes peut faire fondre les métaux les plus durs.',
+                'character3-cta': 'Afficher les détails',
+                'character4-name': '017',
+                'character4-desc': 'Symbole de propreté et d‘ordre, pas même la poussière n‘est tolérée dans son univers.',
+                'character4-cta': 'Afficher les détails',
+                'shop-title': 'Marchandises',
+                'shop1-caption': 'Le dossier 003',
+                'shop2-caption': 'Le dossier 004',
+                'shop3-caption': 'Le dossier 013',
+                'shop4-caption': 'Le dossier 014',
+                'shop5-caption': 'Le dossier 015',
+                'shop6-caption': 'Le dossier 016',
+                'media-title': 'Contenu multimédia',
+                'media1-caption': 'Notre entreprise',
+                'media2-caption': 'Art conceptuel',
+                'media3-caption': 'Juillet 2025, Salon de l‘apprentissage et de l‘enseignement à Hong Kong',
+                'about-title': 'À propos de nous',
+                'about-intro': 'Notre vision',
+                'about-content': 'MOVEMENT OF ARTICULATION LIMITED (MOA) reste fidèle à ses principes fondateurs, insufflant à ses produits l‘idéal de « rendre l‘apprentissage ludique ». Utilisant les logiciels comme support et le savoir comme matière première, nous créons des jeux qui allient divertissement et éducation. Actuellement, nos jeux portent sur la chimie, l‘économie et l‘histoire, et nous avons étendu nos activités au-delà des jeux pour inclure la conception de produits, les médias sociaux et les licences, afin de garantir que les visions du monde véhiculées par nos jeux trouvent un écho aussi bien dans le monde réel que virtuel.',
+                'about-newsletter': 'Bulletin',
+                'contact-title': 'Contactez-nous',
+                'contact-content': 'Commençons notre voyage virtuel infini',
+                'contact-channel': 'Coordonnées',
+                'contact-mail': 'Email: moa@biznetvigator.com',
+                'contact-area': 'Région : Hong Kong, Chine',
+                'footer-company': 'Entreprise',
+                'footer-about': 'À propos de nous',
+                'footer-careers': 'Carrières',
+                'footer-news': 'Les nouvelleses',
+                'footer-games': 'Jeux',
+                'footer-support': 'Soutien',
+                'footer-help': 'Centre d‘aide',
+                'footer-contact': 'Contactez-nous',
+                'footer-faq': 'Question fréquemment posée',
+                'footer-connect': 'Suivez-nous',
+                'footer-twitter': 'Twitter',
+                'footer-facebook': 'Facebook',
+                'footer-instagram': 'Instagram',
+                'footer-youtube': 'Youtube',
+                'footer-copyright': '© 2026 MOVEMENT OF ARTICULATION LIMITED Tous droits réservés'
+            },
+            'ru-RU': {
+                'nav-home': 'Домашняя страница',
+                'nav-games': 'Игры',
+                'nav-characters': 'Персонажи',
+                'nav-shop': 'Товары',
+                'nav-media': 'Медиа',
+                'nav-about': 'О нас',
+                'nav-contact': 'Связаться с нами',
+                'current-lang': 'Русский',
+                'hero-title': 'Создание безграничных возможностей',
+                'hero-subtitle': 'Мы стремимся создавать захватывающие игровые впечатления и незабываемые истории персонажей.',
+                'hero-cta': 'Исследуйте наши миры',
+                'games-title': 'Наши игры',
+                'game1-title': 'Chem001',
+                'game1-desc': 'Двухмерная приключенческая ролевая игра. Игрок откроет секреты химии, развиваясь вместе с персонажами.',
+                'game1-cta': 'Узнать больше',
+                'game2-title': 'Econ001',
+                'game2-desc': 'Стратегическая игра об экономическом развитии городов. Игроку предстоит управлять ростом и накапливать ресурсы для расширения и завоевания.',
+                'game2-cta': 'Узнать больше',
+                'game3-title': 'Hist001',
+                'game3-desc': 'В этой динамичной боевой игре игроку предстоит преодолевать уровни и знакомиться с различными историческими темами.',
+                'game3-cta': 'Узнать больше',
+                'game4-title': 'Stat001',
+                'game4-desc': 'Игра-симулятор, в которой игрок работает менеджером в компании.',
+                'game4-cta': 'Узнать больше',
+                'characters-title': 'Популярные персонажи',
+                'character1-name': '003',
+                'character1-desc': 'Путешественница из далёкой галактики, овладевшая таинственной силой управления звёздами. Она ищет свою пропавшую семью, одновременно защищая баланс Вселенной.',
+                'character1-cta': 'Посмотреть детали',
+                'character2-name': '004',
+                'character2-desc': 'Хранительница леса, способная общаться с природными стихиями. Она ловка, как ветер, таинственна и непредсказуема, всегда появляется в критические моменты, чтобы спасти нуждающихся.',
+                'character2-cta': 'Посмотреть детали',
+                'character3-name': 'Spirit Wind',
+                'character3-desc': 'Когда-то элитная воительница Королевской гвардии, теперь она борется за справедливость. Ее мастерство владения мечом непревзойденно, а сила пламени способна расплавить самые твердые металлы.',
+                'character3-cta': 'Посмотреть детали',
+                'character4-name': '017',
+                'character4-desc': 'Она — символ порядка и чистоты, и даже пылинка не допускается в её мир.',
+                'character4-cta': 'Посмотреть детали',
+                'shop-title': 'Товары',
+                'shop1-caption': 'папку 003',
+                'shop2-caption': 'папку 004',
+                'shop3-caption': 'папку 013',
+                'shop4-caption': 'папку 014',
+                'shop5-caption': 'папку 015',
+                'shop6-caption': 'папку 016',
+                'media-title': 'Медиа-контент',
+                'media1-caption': 'Наша компания',
+                'media2-caption': 'Концепт-арт',
+                'media3-caption': 'Июль 2025 г., Выставка «Обучение и преподавание» в Гонконге.',
+                'about-title': 'О нас',
+                'about-intro': 'Наше видение',
+                'about-content': 'Компания MOVEMENT OF ARTICULATION LIMITED (MOA) придерживается своих основополагающих принципов, воплощая в своей продукции идеал «сделать обучение радостным». Используя программы в качестве средства и знания в качестве сырья, мы создаем игры, сочетающие развлечение и образование. В настоящее время наши игры посвящены химии, экономике и истории, и мы расширили свою деятельность от игр до дизайна продукции, социальных сетей и лицензирования, стремясь к тому, чтобы мировоззрение, создаваемое нашими играми, находило отклик как в реальном, так и в виртуальном мире.',
+                'about-newsletter': 'Информационный бюллетень',
+                'contact-title': 'Связаться с нами',
+                'contact-content': 'Давайте начнём наше бесконечное виртуальное путешествие!',
+                'contact-channel': 'Контактная информация',
+                'contact-mail': 'е-мейл: moa@biznetvigator.com',
+                'contact-area': 'Регион: Гонконг, Китай',
+                'footer-company': 'Компания',
+                'footer-about': 'О нас',
+                'footer-careers': 'Карьера',
+                'footer-news': 'Новости',
+                'footer-games': 'Игры',
+                'footer-support': 'Поддерживать',
+                'footer-help': 'Справочный центр',
+                'footer-contact': 'Связаться с нами',
+                'footer-faq': 'часто задаваемый вопрос',
+                'footer-connect': 'Подписывайтесь на нас',
+                'footer-twitter': 'Twitter',
+                'footer-facebook': 'Facebook',
+                'footer-instagram': 'Instagram',
+                'footer-youtube': 'Youtube',
+                'footer-copyright': '© 2026 MOVEMENT OF ARTICULATION LIMITED. Все права защищены.'
             }
             // 其他语言可以在这里添加
         };
@@ -1314,7 +1540,7 @@
                 iframeElement.src = 'https://www.youtube-nocookie.com/embed/FJ7wauVx6NM';
             }
             else if (currentLang == "tc-CN") {
-                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/ONDO05qaG20';
             }
             else if (currentLang == "en-US") {
                 iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
@@ -1323,13 +1549,13 @@
                 iframeElement.src = 'https://www.youtube-nocookie.com/embed/A9-ZWk800Jg';
             }
             else if (currentLang == "ko-KR") {
-                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/hVzQEDwt3VM';
             }
             else if (currentLang == "ru-RU") {
-                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/Wv9knRNiJIQ';
             }
             else if (currentLang == "fr-FR") {
-                iframeElement.src = 'https://www.youtube-nocookie.com/embed/rxf5_1Vilq8';
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/gRkV27EbHqs';
             }
         }
 
@@ -1347,6 +1573,7 @@
 
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
+
         }
 
         // 点击圆点切换幻灯片
@@ -1355,6 +1582,9 @@
                 showSlide(index);
             });
         });
+
+        // Initialize the first slide on page load
+        
 
         // 自动轮播
         setInterval(() => {
